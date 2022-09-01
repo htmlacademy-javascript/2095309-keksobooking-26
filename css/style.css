@@ -32,6 +32,11 @@
           box-sizing: border-box;
 }
 
+div.pristine-error {
+  color: rgb(235, 12, 12);
+  margin: 5px 0;
+}
+
 .content-box-component {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
@@ -1034,4 +1039,17 @@ fieldset {
 
 .hidden {
   display: none;
+}
+
+.alert-message {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 3px;
+  z-index: 100;
+  font-size: 30px;
+  text-align: center;
+  background-color: #ff4e4e;
 }
