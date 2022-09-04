@@ -1,3 +1,4 @@
+
 const typeHousing = {
   flat : 'Квартира',
   bungalow : 'Бунгало',
@@ -25,6 +26,7 @@ const classElement = {
 const adTemplate = document.querySelector('#card')
   .content
   .querySelector('.popup');
+
 
 //функция создает один элемент ДОМ из массива
 const createHtmlAd = (ad) => {
@@ -83,5 +85,6 @@ const createHtmlAd = (ad) => {
 
   return adElement;
 };
+
 
 export {createHtmlAd};

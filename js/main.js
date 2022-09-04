@@ -11,4 +11,3 @@ getData((offers) => {
   selectFilter(offers);
   createMarkers(onChangeFilter(offers));
 },showAlert);
-

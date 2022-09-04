@@ -87,5 +87,4 @@ function debounce (callback, timeoutDelay = 500) {
   };
 }
 
-
 export {getRandomPositiveFloat, showAlert, showMessage, debounce};
