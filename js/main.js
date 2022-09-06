@@ -1,5 +1,13 @@
-import {createAds} from  './data.js';
+import {Slider} from  './form.js';
+import {editForm} from  './form-edit.js';
+import {createMarkers} from  './map.js';
+import {getData} from  './api.js';
+import {showAlert} from  './util.js';            //плашка с ошибкой
+import {selectFilter, onChangeFilter} from  './filtering.js';
 
-createAds();
-
-
+getData((offers) => {
+  editForm();
+  Slider();
+  selectFilter(offers);
+  createMarkers(onChangeFilter(offers));
+},showAlert);
