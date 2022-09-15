@@ -2,6 +2,8 @@ import {SIMILAR_AD_COUNT} from  './constant.js';
 import {createMarkers, mapFilters} from  './map.js';
 import {debounce} from  './util.js';
 
+const RERENDER_DELAY = 500;
+
 export const housingType = document.querySelector('#housing-type');       //тип жилья
 const housingPrice = document.querySelector('#housing-price');            //цена
 const housingRooms = document.querySelector('#housing-rooms');            //количество комнат
@@ -13,7 +15,6 @@ const filterWasher = document.querySelector('#filter-washer');            //ст
 const filterElevator = document.querySelector('#filter-elevator');        //лифт
 const filterConditioner = document.querySelector('#filter-conditioner');  //кондиционер
 
-const RERENDER_DELAY = 500;
 //функция возвращает True если данное удобство есть в объявлении
 const getFeature = (element, ad) => {
   if (element.checked) {

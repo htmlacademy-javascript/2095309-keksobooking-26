@@ -5,17 +5,17 @@ import {priceSlider} from  './form.js';
 import {resetAllElementsMap} from  './map.js';
 import {initChoosePhoto, avatarPreview} from  './upload-photo.js';
 
-const UploadForm = document.querySelector('.ad-form');             //форма редактирования объявления
-const submitButton = UploadForm.querySelector('#upload-submit');   //кнопка Опубликовать
-const priceInput = UploadForm.querySelector('#price');
-const housingTypeInput = UploadForm.querySelector('#type');       //тип жилья
-const capacityInput = UploadForm.querySelector('#capacity');      //количество мест
-const roomNumberInput = UploadForm.querySelector('#room_number'); //количество комнат
-const checkInInput = UploadForm.querySelector('#timein');         //время заезда
-const checkOutInput = UploadForm.querySelector('#timeout');       //время выезда
+const uploadForm = document.querySelector('.ad-form');             //форма редактирования объявления
+const submitButton = uploadForm.querySelector('#upload-submit');   //кнопка Опубликовать
+const priceInput = uploadForm.querySelector('#price');
+const housingTypeInput = uploadForm.querySelector('#type');       //тип жилья
+const capacityInput = uploadForm.querySelector('#capacity');      //количество мест
+const roomNumberInput = uploadForm.querySelector('#room_number'); //количество комнат
+const checkInInput = uploadForm.querySelector('#timein');         //время заезда
+const checkOutInput = uploadForm.querySelector('#timeout');       //время выезда
 const housePicPreview = document.querySelector('.ad-form__photo');
 
-const pristine = new Pristine(UploadForm, {
+const pristine = new Pristine(uploadForm, {
   // класс родительского элемента, к которому добавляется класс ошибки/успеха
   classTo: 'form-group',
   errorClass: 'has-danger',
@@ -52,7 +52,7 @@ const resetAdForm = () => {
   priceInput.placeholder = MIN_PRICE_OF_HOUSING[housingTypeInput.value];
   capacityInput.selectedIndex = 3;
   pristine.reset();
-  UploadForm.reset();
+  uploadForm.reset();
   priceSlider.noUiSlider.set(MIN_PRICE_OF_HOUSING[housingTypeInput.value]);
   resetPhotos();
   unblockSubmitButton();
@@ -104,7 +104,7 @@ const editForm = ()  => {
   };
 
   //подключаем все обработчики
-  UploadForm.addEventListener('submit', onUploadFormSubmit);
+  uploadForm.addEventListener('submit', onUploadFormSubmit);
   pristine.addValidator(priceInput, validatePriceInput, getPriceErrorMessage);
   pristine.addValidator(capacityInput, validateRoomNumberInput, getCapacityErrorMessage);
   pristine.addValidator(roomNumberInput, validateRoomNumberInput, getCapacityErrorMessage);
