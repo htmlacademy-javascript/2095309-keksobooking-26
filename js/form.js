@@ -1,9 +1,9 @@
 //модуль настройки свойств и вида формы
 import {MIN_PRICE_OF_HOUSING} from  './constant.js';
 
-const UploadForm = document.querySelector('.ad-form');
-const housingTypeInput = UploadForm.querySelector('#type');                 //тип жилья
-const priceInput = UploadForm.querySelector('#price');
+const uploadForm = document.querySelector('.ad-form');
+const housingTypeInput = uploadForm.querySelector('#type');                 //тип жилья
+const priceInput = uploadForm.querySelector('#price');
 const adForm = document.querySelector('.ad-form');
 const mapFilters = document.querySelector('.map__filters');
 export const priceSlider = adForm.querySelector('.ad-form__slider');       //слайдер для поля Цена за ночь
@@ -32,7 +32,7 @@ const initialDisable = () => {
   disableForm(mapFilters);
 };
 
-const Slider = () => {
+const slider = () => {
   //инициализируем слайдер и настраиваем его
   noUiSlider.create(priceSlider, {
     range: {
@@ -69,5 +69,5 @@ const Slider = () => {
 
 };
 
-export {initialDisable, enableForm, disableForm, Slider};
+export {initialDisable, enableForm, disableForm, slider};
 

@@ -1,4 +1,4 @@
-import {Slider} from  './form.js';
+import {slider} from  './form.js';
 import {editForm} from  './form-edit.js';
 import {createMarkers} from  './map.js';
 import {getData} from  './api.js';
@@ -7,7 +7,7 @@ import {selectFilter, onChangeFilter} from  './filtering.js';
 
 getData((offers) => {
   editForm();
-  Slider();
+  slider();
   selectFilter(offers);
   createMarkers(onChangeFilter(offers));
 },showAlert);
